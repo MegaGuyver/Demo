@@ -2,20 +2,24 @@ PODS:
   - Alamofire (5.8.1)
   - AlamofireImage (4.3.0):
     - Alamofire (~> 5.8)
+  - SwiftLoader (1.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - SwiftLoader
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - SwiftLoader
 
 SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   AlamofireImage: 843953fa97bee5f561cf05d83abd759e590b068d
+  SwiftLoader: f12f3a6fb42576862a3a5eb80c7e59fc881b6982
 
-PODFILE CHECKSUM: 66b0a86cf44025ee0f185a37ebf95924230b5dc5
+PODFILE CHECKSUM: e4b8d8521b3614848545c622492a5e58c1782303
 
 COCOAPODS: 1.13.0

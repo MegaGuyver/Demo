@@ -75,17 +75,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Payments", bundle:nil)
-//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "NWTransferFundsViewController") as! NWTransferFundsViewController
-//        nextViewController.transferOrigin = .ToABeneficiary
-//        
-//        if isSearching {
-//            nextViewController.recipient = viewModel.filteredRecipients[indexPath.row]
-//        } else {
-//            nextViewController.recipient = viewModel.recipients[indexPath.row]
-//        }
-//        
-//        self.navigationController?.pushViewController(nextViewController, animated: true)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        nextViewController.urlString = viewModel.results[indexPath.row].url
+        
+        self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
 }
