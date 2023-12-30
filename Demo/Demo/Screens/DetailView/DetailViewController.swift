@@ -7,8 +7,9 @@
 
 import UIKit
 import WebKit
+import SwiftLoader
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
     var urlString:String!
@@ -16,7 +17,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        webView.navigationDelegate = self
         // Do any additional setup after loading the view.
+        SwiftLoader.show(title: "Fetching...", animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,6 +30,11 @@ class DetailViewController: UIViewController {
            self.webView.load(requestObj)
        }
         
+    }
+    
+    func webView(_ webView: WKWebView, didFinish  navigation: WKNavigation!)
+    {
+        SwiftLoader.hide()
     }
 }
 
