@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SwiftLoader
+
 
 class MainViewController: UIViewController {
     
@@ -25,6 +27,7 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         
         fetchRecipients()
+        SwiftLoader.show(title: "Fetching...", animated: true)
     }
 
 }
@@ -47,6 +50,7 @@ extension MainViewController {
             guard let self = self else { return }
             DispatchQueue.main.async {
             self.tableViewMostPopular.reloadData()
+            SwiftLoader.hide()
        }
         }
     }
